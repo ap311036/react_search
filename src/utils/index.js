@@ -1,1 +1,0 @@
-export { default as ClickOutSide } from './click_outside';
