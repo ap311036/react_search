@@ -2,6 +2,7 @@
   "name": "my-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ap311036.github.io/react_search/",
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
@@ -55,6 +56,7 @@
   "scripts": {
     "start": "set 'REACT_APP_SECRET_CODE=abcdef' && node scripts/start.js",
     "build": "node scripts/build.js",
+    "deploy": "gh-pages -d build",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -109,6 +111,7 @@
   },
   "devDependencies": {
     "classnames": "^2.2.6",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.3"
   }
 }
