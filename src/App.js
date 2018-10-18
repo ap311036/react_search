@@ -24,14 +24,14 @@ class App extends Component {
     };
     this.AbortController = null;
     this.textInput = React.createRef();
-    eval('window.getInputValue'+this.props.number+' = this.getInputValue');
+    // eval('window.getInputValue'+this.props.number+' = this.getInputValue');
   }
   componentWillMount() {
     this.updateDimensions();
   }
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    eval('window._onFocusHandle' + this.props.number + '= this._onFocusHandle');
+    // eval('window._onFocusHandle' + this.props.number + '= this._onFocusHandle');
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
@@ -69,8 +69,6 @@ class App extends Component {
     const firstItemName = this.state.actData.sort((a, b) => a.txt.length - b.txt.length)[0].txt;
     const firstItem = this.state.actData.sort((a, b) => a.txt.length - b.txt.length)[0];
     firstItem.dataIndex = 0;
-    // console.log('沒有使用快速選單');
-    // console.log(`將${firstItemName}塞回input`);
     this.setState({ showSearchResult: (this.state.width < 980) ? true :false, inputValue: firstItemName, selectedVal: firstItem });
                       //關閉選單                  把文字塞回input
   }
@@ -90,7 +88,6 @@ class App extends Component {
     });
 
     let url = 'https://tun-hsiang.000webhostapp.com/ajax.php?keyWord=' + value;
-    // console.log(url)
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -147,6 +144,7 @@ class App extends Component {
       >
         <SearchInput
           ref={this.textInput}
+          className="col-xs-24"
           inputValue={this.state.inputValue}
           innerValue={this.state.innerValue}
           onTypingFinish={this.onTypingFinish} //中文輸入完成
@@ -203,8 +201,8 @@ class App extends Component {
             <div className={this.state.innerValue.length < 2 && this.state.showSearchResult ? "DtmRcfrContainer" : "DtmRcfrContainer d-no"}>
               <span className="DtmRcfrNotice">找不到選項？請輸入關鍵字查詢</span>
               <DtmRcfr
-                levelKey={process.env.NODE_ENV === 'production' ? window.levelKey : ['vLine', 'vLinetravel', 'vLinewebarea']}
-                dataResouce={process.env.NODE_ENV === 'production' ? window.dataResouce : "./home.json"}
+                levelKey={['vLine', 'vCountry', 'vCity']}
+                dataResouce={"./abroad.json"}
                 replaceRegular={/[a-zA-Z\(\)\s]/g}
                 onClickItem={this._onClickItem}
                 selectedData={selected}

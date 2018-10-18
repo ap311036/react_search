@@ -47,25 +47,22 @@ class SearchInput extends Component {
       }
     }
     return (
-      <div>
-        <input type="text"
-          value={this.props.inputValue}
-          ref={this.textInput}
-          placeholder="輸入城市、景點、體驗行程或活動名稱"
-          onCompositionStart={handleComposition}
-          onCompositionUpdate={handleComposition}
-          onCompositionEnd={handleComposition}
-          onChange={handleChange}
-          onFocus={(e)=>{
-            this.props.onFocus(e);
-          }}
-          onBlur={(e) => {
-            this.props.onBlur(e);
-          }}
-        />
-        {/*<p>inputValue: {this.state.inputValue}</p>
-          <p>innerValue: {this.state.innerValue}</p>*/}
-      </div>
+      <input type="text"
+        value={this.props.inputValue}
+        ref={this.textInput}
+        placeholder="輸入城市、景點、體驗行程或活動名稱"
+        onCompositionStart={handleComposition}
+        onCompositionUpdate={handleComposition}
+        onCompositionEnd={handleComposition}
+        onChange={handleChange}
+        onFocus={(e)=>{
+          this.props.onFocus(e);
+        }}
+        onBlur={(e) => {
+          this.props.onBlur(e);
+        }}
+        {...this.props}
+      />
     );
   }
 }

@@ -4,17 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-let rootLen = document.getElementsByClassName('activityRoot').length;
-for (let i = 0; i <= rootLen - 1; i++ ){
-  ReactDOM.render
-    (<App number={i} />,
-    document.getElementsByClassName('activityRoot')[i]
-  );
-}
-// ReactDOM.render
-//   (<App/>,
-//   document.getElementById('activityRoot')
+// let rootLen = document.getElementsByClassName('activityRoot').length;
+// for (let i = 0; i <= rootLen - 1; i++ ){
+//   ReactDOM.render
+//     (<App number={i} />,
+//     document.getElementsByClassName('activityRoot')[i]
 //   );
+// }
+ReactDOM.render(<App/>,document.getElementById('activityRoot'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
