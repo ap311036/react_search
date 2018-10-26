@@ -42,9 +42,9 @@ export default class Module extends Component {
         return this.lightingMatchWord(newArry);
     }
     lightingMatchWord (dataArray) {  // 從複製出來的DATA做搜尋紅字處理
-        let searchKeyWord = this.props.matchWord;
+        let searchKeyWord = this.props.matchWord.trim().split(/\s+/).sort((a, b)=>{return a.length - b.length});
         let newData = dataArray.map(item => {
-          let re = new RegExp('(' + searchKeyWord.trim().split(/\s+/).join('|').replace(/[-[\]{}()*+?.,\\^$#\s]/g, '\\$&') + ')', 'ig');
+          let re = new RegExp('(' + searchKeyWord.join('|').replace(/[-[\]{}()*+?.,\\^$#\s]/g, '\\$&') + ')', 'ig');
           if (re.test(item.txt)) {
             // let searchResult = item.txt.match(re)[1];
             item.Newtxt = item.txt.replace(re, '<span class="red">$1</span>');
