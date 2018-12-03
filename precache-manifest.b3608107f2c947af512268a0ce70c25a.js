@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/react_search/static/js/runtime~main.js"
   },
   {
-    "revision": "07227657cf79ec6384bf",
+    "revision": "a65567c87b479fa87388",
     "url": "/react_search/static/js/main.chunk.js"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/react_search/static/js/1.chunk.js"
   },
   {
-    "revision": "07227657cf79ec6384bf",
+    "revision": "a65567c87b479fa87388",
     "url": "/react_search/static/css/main.chunk.css"
   },
   {
