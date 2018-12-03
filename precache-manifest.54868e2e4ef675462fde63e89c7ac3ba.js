@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/react_search/static/css/main.chunk.css"
   },
   {
-    "revision": "4fb025769dc073b3624b71247b609338",
+    "revision": "f5372e96ceffe8923f383811ac8622e1",
     "url": "/react_search/index.html"
   }
 ];
